@@ -1,7 +1,7 @@
 import 'models/details_model.dart';
-import 'screens/simpsons_char_screen.dart';
-import 'screens/simpsons_episode_screen.dart';
-import 'screens/simpsons_product_screen.dart';
+import 'screens/simpsons/simpsons_char_screen.dart';
+import 'screens/simpsons/simpsons_episode_screen.dart';
+import 'screens/simpsons/simpsons_product_screen.dart';
 
 final List<DetailsModel> simpsonsLinks = [
   DetailsModel(title: "The Characters", 

@@ -1,7 +1,7 @@
 import 'models/details_model.dart';
-import 'screens/rick_char_screen.dart';
-import 'screens/rick_episode_screen.dart';
-import 'screens/rick_location_screen.dart';
+import 'screens/rick_and_morty/rick_char_screen.dart';
+import 'screens/rick_and_morty/rick_episode_screen.dart';
+import 'screens/rick_and_morty/rick_location_screen.dart';
 
 final List<DetailsModel> rickLinks = [
   DetailsModel(title: "The Characters", 

@@ -1,6 +1,6 @@
 import 'models/details_model.dart';
-import 'screens/simpsons_main_screen.dart';
-import 'screens/rick_main_screen.dart';
+import 'screens/simpsons/simpsons_main_screen.dart';
+import 'screens/rick_and_morty/rick_main_screen.dart';
 
 final List<DetailsModel> categoriesLinks = [
   DetailsModel(title: "The Simpsons", 

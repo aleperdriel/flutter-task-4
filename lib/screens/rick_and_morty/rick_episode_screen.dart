@@ -1,21 +1,22 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_task4/models/simpsons_char_model.dart';
+import 'package:flutter_task4/models/rick_and_morty/rick_episode_model.dart';
+
 import 'package:http/http.dart' as http;
 
-class SimpsonsCharScreen extends StatefulWidget {
-  const SimpsonsCharScreen({super.key, this.title = '', this.apiLink = ''});
+class RickEpisodeScreen extends StatefulWidget {
+  const RickEpisodeScreen({super.key, this.title = '', this.apiLink = ''});
   final String title;
   final String apiLink;
 
   @override
-  State<SimpsonsCharScreen> createState() => _SimpsonsCharScreenState();
+  State<RickEpisodeScreen> createState() => _RickEpisodeScreenState();
 }
 
-class _SimpsonsCharScreenState extends State<SimpsonsCharScreen> {
+class _RickEpisodeScreenState extends State<RickEpisodeScreen> {
   bool _isLoading = false;
-  List<SimpsonsCharModel>? charInfo = [];
+  List<RickEpisodeModel>? episodeInfo = [];
 
   @override
   void initState() {
@@ -31,8 +32,8 @@ class _SimpsonsCharScreenState extends State<SimpsonsCharScreen> {
 
       http.Response response = await http.get(Uri.parse(widget.apiLink));
       Iterable l = json.decode(response.body);
-      charInfo = List<SimpsonsCharModel>.from(
-        l.map((model) => SimpsonsCharModel.fromJson(model)));
+      episodeInfo = List<RickEpisodeModel>.from(
+        l.map((model) => RickEpisodeModel.fromJson(model)));
     }
     catch(e) {
       debugPrint(e.toString());
@@ -57,14 +58,14 @@ class _SimpsonsCharScreenState extends State<SimpsonsCharScreen> {
                 child: CircularProgressIndicator(),
               )
             : ListView.builder(
-                itemCount: charInfo!.length,
+                itemCount: episodeInfo!.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(
-                        '${charInfo![index].id} - ${charInfo![index].name}'),
-                    subtitle: charInfo![index].gender != '' ? 
-                    charInfo![index].gender == 'm' ? const Icon(Icons.male) : const Icon(Icons.female) 
-                    : const Text('Unknown gender'),
+                        'Episode ${episodeInfo![index].season}.${episodeInfo![index].episode}'),
+                    subtitle: Text(
+                          '${episodeInfo![index].name}'
+                        ),
                   );
                 }));
   }

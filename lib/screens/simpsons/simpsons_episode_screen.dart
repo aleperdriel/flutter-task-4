@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_task4/models/simpsons_episode_model.dart';
+import 'package:flutter_task4/models/simpsons/simpsons_episode_model.dart';
 import 'package:http/http.dart' as http;
 
 class SimpsonsEpisodeScreen extends StatefulWidget {

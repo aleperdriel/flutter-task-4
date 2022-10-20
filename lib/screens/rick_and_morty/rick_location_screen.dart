@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_task4/models/rick_location_model.dart';
+import 'package:flutter_task4/models/rick_and_morty/rick_location_model.dart';
 import 'package:http/http.dart' as http;
 
 class RickLocationScreen extends StatefulWidget {
